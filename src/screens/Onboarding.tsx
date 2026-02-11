@@ -19,7 +19,7 @@ export const Onboarding = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background flex flex-col p-gutter-mobile pt-10 pb-safe">
+        <div className="min-h-dvh bg-background flex flex-col p-gutter-mobile pt-10 pb-safe">
             {/* Progress */}
             <div className="flex space-x-1 mb-8">
                 {[1, 2, 3].map(i => (

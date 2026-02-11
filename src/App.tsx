@@ -14,7 +14,7 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   const hideLayout = location.pathname === '/onboarding';
 
   if (hideLayout) {
-    return <main className="min-h-screen bg-background">{children}</main>;
+    return <main className="min-h-dvh bg-background">{children}</main>;
   }
 
   return <Layout>{children}</Layout>;
@@ -22,8 +22,8 @@ const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
 
 // Simple auth/onboarding guard
 const RouteGuard = ({ children }: { children: React.ReactNode }) => {
-  // const onboardingComplete = localStorage.getItem('onboarding_complete');
-  const onboardingComplete = null; // FORCE OPEN QUIZ
+  const onboardingComplete = localStorage.getItem('onboarding_complete');
+  // const onboardingComplete = null; // FORCE OPEN QUIZ
 
   if (!onboardingComplete) {
     return <Navigate to="/onboarding" replace />;
